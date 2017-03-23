@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Future Imperfect</title>
+		<title>Tech Blog</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -16,14 +16,14 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1><a href="#">Future Imperfect</a></h1>
+						<h1><a href="#">Tech Blog</a></h1>
 						<nav class="links">
 							<ul>
-								<li><a href="#">Lorem</a></li>
-								<li><a href="#">Ipsum</a></li>
-								<li><a href="#">Feugiat</a></li>
-								<li><a href="#">Tempus</a></li>
-								<li><a href="#">Adipiscing</a></li>
+								<li><a href="/news">News</a></li>
+								<li><a href="/posts">Posts</a></li>
+								<li><a href="/about">About</a></li>
+								<li><a href="/qoutes">Qoutes</a></li>
+								<li><a href="/faq">FAQ</a></li>
 							</ul>
 						</nav>
 						<nav class="main">
@@ -188,8 +188,8 @@
 							<section id="intro">
 								<a href="#" class="logo"><img src="images/logo.jpg" alt="" /></a>
 								<header>
-									<h2>Future Imperfect</h2>
-									<p>Another fine responsive site template in HTML5</a></p>
+									<h2>Tech Blog</h2>
+									<p>LIKE MY STROKE MADE ONLY</a></p>
 								</header>
 							</section>
 
