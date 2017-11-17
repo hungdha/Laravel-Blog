@@ -1,3 +1,4 @@
 # Laravel-Blog
 Laravel-Blog
-![alt text](https://github.com/hungdha/Laravel-Blog/blob/master/laravel.png)
+<img src="laravel.png" height="400" alt="Screenshot"/> 
+
