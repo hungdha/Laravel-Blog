@@ -40,15 +40,21 @@
 							</ul>
 						</nav>
 					</header>
-
+@ifGuest
+									<h3>ifGuest</h3>
+								@else
+									
+									<h3>elseGuest</h3>
+								@endif
 				<!-- Menu -->
 					<section id="menu">
 
 						<!-- Search -->
 							<section>
-								<form class="search" method="get" action="#">
-									<input type="text" name="query" placeholder="Search" />
-								</form>
+								
+<form class="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search11" />
+									</form>
 							</section>
 
 						<!-- Links -->
@@ -84,7 +90,7 @@
 						<!-- Actions -->
 							<section>
 								<ul class="actions vertical">
-									<li><a href="#" class="button big fit">Log In</a></li>
+									<li><a href="{{ url('/login') }}" class="button big fit">Log In</a></li>
 								</ul>
 							</section>
 
@@ -322,6 +328,5 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
-
 	</body>
 </html>

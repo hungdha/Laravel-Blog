@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="{{ config('app.locale') }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
-
+@extends("layouts.page")
+@section('title', 'Login Page')
+@section("content")
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
@@ -63,8 +57,6 @@
                 margin-bottom: 30px;
             }
         </style>
-    </head>
-    <body>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -80,9 +72,11 @@
             <div class="content">
                 <div class="title m-b-md">
                     Login Form
+                    <Login></Login>
                 </div>
                 <div class="login-form">
-                    <form method="POST" name="loginForm" action="#" >
+                    <form method="POST" name="loginForm" action="{{ action('Auth\LoginController@login') }}"  accept-charset="UTF-8" >
+                         {{ csrf_field() }}
                         <div class="form-group" >
                             <label for="usernameId">Username: </label>
                             <input type="text" name="username" id="usernameId" >
@@ -111,5 +105,4 @@
                 </div>
             </div>
         </div>
-    </body>
-</html>
+@endsection

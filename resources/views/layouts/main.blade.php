@@ -11,8 +11,10 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     </head>
     <body>    
-        <div class="container">
-            @yield('content')
+        <div class="main" >
+            <div class="container">
+                @yield('content')
+            </div>
         </div>
     </body>
 </html>

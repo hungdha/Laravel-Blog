@@ -17,13 +17,25 @@ Route::get("/", "HomeController@index")->name("index");
 Route::get("/about", "HomeController@about")->name("about");
 Route::get("/contact", "HomeController@contact")->name("contact");
 
+// Sign In / Sign Up show form
 Route::get("/login", "Auth\LoginController@showLoginForm")->name("loginForm");
+// POST login form
 Route::post("/login", "Auth\LoginController@login")->name("login");
 Route::post("/logout", "Auth\LoginController@logout")->name("logout");
 
 Route::get("/register", "Auth\RegisterController@showRegistrationForm")->name("loginForm");
 Route::post("/register", "Auth\RegisterController@register")->name("register");
 
-$s = 'social.';
-Route::get('/social/redirect/{provider}',   ['as' => $s . 'redirect',   'uses' => 'Auth\SocialController@getSocialRedirect']);
-Route::get('/social/handle/{provider}',     ['as' => $s . 'handle',     'uses' => 'Auth\SocialController@getSocialHandle']);
+$s = 'social.'; 
+Route::get('/social/redirect/{provider}',   
+	[
+		'as' => $s . 'redirect',   
+		'uses' =>'Auth\SocialController@getSocialRedirect'
+	]
+); 
+Route::get('/social/handle/{provider}',
+	[
+		'as' => $s . 'handle',
+		'uses' => 'Auth\SocialController@getSocialHandle'
+	]
+);
