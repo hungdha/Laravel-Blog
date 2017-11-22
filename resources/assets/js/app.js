@@ -13,13 +13,10 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-import Login from './components/Login.vue';
-Vue.http.headers.common['X-CSRF-TOKEN'] = Laravel.csrfToken;
 
+//Vue.http.headers.common['X-CSRF-TOKEN'] = Laravel.csrfToken;
+import Login from './components/Login.vue';
 const app = new Vue({
     el: '#app',
-    components: {
-    	Login
-    }
-
+    render: h => h(Login)
 });

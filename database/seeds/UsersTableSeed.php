@@ -11,14 +11,17 @@ class UsersTableSeed extends Seeder
      */
     public function run()
     {
-        //
-        User::create(['email' => 'foo@bar.com']);
-		Model::unguard();
 		$user = [
-			'name' => 'name',
-			'email' => 'name@gmail.com',
-			'password' => bcrypt('123456')
-		];
+			'username' => 'admin',
+			'email' => 'admin@gmail.com',
+            'password' => bcrypt('123456'),
+            'firstname' => 'An' ,
+            'lastname' => 'Le',
+            'activated' => 1,
+            'lastlogin' => time(),
+            'createdtime' => time(),
+            'modifiedtime' => time()
+        ];
 		$db = DB::table('users')->insert($user);
     }
 }

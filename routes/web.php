@@ -13,18 +13,28 @@
 
 
 // Home Controller
-Route::get("/", "HomeController@index")->name("index");
+Route::get("/", "HomeController@index" )->name("index");
+Route::get("/home", "HomeController@index" )->name("home");
 Route::get("/about", "HomeController@about")->name("about");
 Route::get("/contact", "HomeController@contact")->name("contact");
 
 // Sign In / Sign Up show form
-Route::get("/login", "Auth\LoginController@showLoginForm")->name("loginForm");
+Route::get("/auth/login", "Auth\LoginController@showLoginForm")->name("loginForm");
 // POST login form
-Route::post("/login", "Auth\LoginController@login")->name("login");
-Route::post("/logout", "Auth\LoginController@logout")->name("logout");
+Route::post("/auth/login", "Auth\LoginController@login")->name("login");
+Route::get("/auth/logout", "Auth\LoginController@logout")->name("logout");
 
-Route::get("/register", "Auth\RegisterController@showRegistrationForm")->name("loginForm");
-Route::post("/register", "Auth\RegisterController@register")->name("register");
+Route::get("/auth/register", "Auth\RegisterController@showRegistrationForm")->name("loginForm");
+Route::post("/auth/register", "Auth\RegisterController@register")->name("register");
+
+// Post Controller
+Route::get("/posts/index", "PostController@index")->name("postIndex");
+Route::post("/posts/create", "PostController@create")->name("postCreate");
+Route::post("/posts/edit", "PostController@edit")->name("postEdit");
+Route::post("/posts/show", "PostController@show")->name("postShow");
+Route::post("/posts/update", "PostController@update")->name("postUpdate");
+
+
 
 $s = 'social.'; 
 Route::get('/social/redirect/{provider}',   

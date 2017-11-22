@@ -13,7 +13,8 @@
                 font-weight: 100;
                 height: 100vh;
                 margin: 0;
-            }
+                padding-top: 0;
+                          }
 
             .full-height {
                 height: 100vh;
@@ -35,9 +36,7 @@
                 top: 18px;
             }
 
-            .content {
-                text-align: center;
-            }
+           
 
             .title {
                 font-size: 84px;
@@ -54,27 +53,35 @@
             }
 
             .m-b-md {
-                margin-bottom: 30px;
+                margin-bottom: 30p x;
             }
         </style>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
+          
                 <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
+                    <a href="{{ route('home') }}">Home</a>
+                    <a href="{{ route('login') }}">Login</a>
+                    <a href="{{ route('register') }}">Register</a>
                 </div>
-            @endif
+          
 
             <div class="content">
+                <div id="app" >
+                </div>
                 <div class="title m-b-md">
-                    Login Form
-                    <Login></Login>
+                    Login Form 
                 </div>
                 <div class="login-form">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    
                     <form method="POST" name="loginForm" action="{{ action('Auth\LoginController@login') }}"  accept-charset="UTF-8" >
                          {{ csrf_field() }}
                         <div class="form-group" >
@@ -83,7 +90,10 @@
                         </div>
                         <div class="form-group" >
                             <label for="passwordId">Password: </label>
-                            <input type="password" name="password" id="passwordId" >
+                            <input type="password" name="password" id="passwordId" />
+                        </div>
+                        <div class="form-group" >
+                            <input type="checkbox" name="remember" id="rememberId" /> Remember Me!
                         </div>
                         <div class="form-group" >
                             <button type="submit" name="loginButton" id="btnLogin" >Login</button>
@@ -97,11 +107,11 @@
                     
                 </div>        
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="#">Documentation</a>
+                    <a href="#">Laracasts</a>
+                    <a href="#">News</a>
+                    <a href="#">Forge</a>
+                    <a href="#">GitHub</a>
                 </div>
             </div>
         </div>

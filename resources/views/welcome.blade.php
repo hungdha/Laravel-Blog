@@ -28,6 +28,7 @@
 						</nav>
 						<nav class="main">
 							<ul>
+								
 								<li class="search">
 									<a class="fa-search" href="#search">Search</a>
 									<form id="search" method="get" action="#">
@@ -40,21 +41,14 @@
 							</ul>
 						</nav>
 					</header>
-@ifGuest
-									<h3>ifGuest</h3>
-								@else
-									
-									<h3>elseGuest</h3>
-								@endif
 				<!-- Menu -->
 					<section id="menu">
 
 						<!-- Search -->
 							<section>
-								
-<form class="search" method="get" action="#">
-										<input type="text" name="query" placeholder="Search11" />
-									</form>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
 							</section>
 
 						<!-- Links -->
@@ -90,7 +84,16 @@
 						<!-- Actions -->
 							<section>
 								<ul class="actions vertical">
-									<li><a href="{{ url('/login') }}" class="button big fit">Log In</a></li>
+									<li>
+										@if (Auth::guest())
+											<a href="{{ route('login') }}" class="button big fit">Log In</a>
+											</li><li>
+											<a href="{{ route('register') }}" class="button big fit">Register</a>
+										@else
+											{{ Auth::user()->name }}
+											<a href="{{ route('logout') }}">Logout</a>
+										@endif
+									</li>
 								</ul>
 							</section>
 

@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('password', 127);
             $table->string('firstname', 100)->nullable();
             $table->string('lastname', 100)->nullable();
-            $table->smallInteger('active');
+            $table->smallInteger('activated');
             $table->integer('lastlogin');
             $table->integer('createdtime');
             $table->integer('modifiedtime');
